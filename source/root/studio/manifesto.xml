@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <studio_uuid>8466bd24-fd59-11df-9f90-475ae2f5345b</studio_uuid>
+  <appliance_uuid>b1dd37de-7ab1-11e1-23b6-474899dd32f3</appliance_uuid>
+  <config>
+    <image displayname="SAMBHA" schemeversion="2.4" name="SAMBHA">
+      <description type="system">
+        <author>itomato</author>
+        <contact>studio-devel@suse.de</contact>
+        <specification>A text-only base</specification>
+      </description>
+      <preferences>
+        <type checkprebuilt="true" primary="true" boot="vmxboot/suse-12.1" format="vmdk" fsnocheck="true" filesystem="ext3">vmx</type>
+        <version>0.0.17</version>
+        <packagemanager>ensconce</packagemanager>
+        <rpm-check-signatures>False</rpm-check-signatures>
+        <rpm-force>False</rpm-force>
+        <boot-theme>studio</boot-theme>
+        <locale>en_US</locale>
+        <size additive="false" unit="M">16384</size>
+      </preferences>
+      <users group="root">
+        <user home="/home/admin" shell="/bin/bash" name="admin" pwd="$1$eOaa5xEF$B36fuxl7oFEn.OnfCUx861"/>
+        <user home="/root" shell="/bin/bash" name="root" pwd="$1$cycFQktV$0bO5X67ZvIRKbB/JjDqEY/"/>
+      </users>
+      <repository type="rpm-md">
+        <source path="http://susestudio.com/user_repos/UmdER5jBgYvrUPpTvM4C"/>
+      </repository>
+      <repository type="rpm-md">
+        <source path="http://download.opensuse.org/update/12.1/"/>
+      </repository>
+      <repository type="yast2">
+        <source path="http://download.opensuse.org/distribution/12.1/repo/oss/"/>
+      </repository>
+      <repository type="rpm-md">
+        <source path="http://download.opensuse.org/repositories/Virtualization/openSUSE_12.1"/>
+      </repository>
+      <repository type="rpm-md">
+        <source path="http://download.opensuse.org/repositories/server:monitoring/openSUSE_12.1"/>
+      </repository>
+      <repository type="rpm-md">
+        <source path="http://download.opensuse.org/repositories/YaST:/Head/openSUSE_12.1"/>
+      </repository>
+      <repository type="rpm-md">
+        <source path="http://susestudio.com/user_repos/UgpgEmgykFdtOZ6nsGe1"/>
+      </repository>
+      <repository type="rpm-md">
+        <source path="http://download.opensuse.org/repositories/network:/ha-clustering/openSUSE_12.1"/>
+      </repository>
+      <vmwareconfig memory="512" arch="x86_64" guestOS="suse-64" usb="true">
+        <vmwaredisk controller="scsi" id="0"/>
+        <vmwarecdrom controller="ide" id="0"/>
+        <vmwarenic interface="0" driver="e1000" mode="bridged"/>
+      </vmwareconfig>
+      <packages type="image" patternType="onlyRequired" patternPackageType="onlyRequired">
+        <opensusePattern name="yast2_basis"/>
+        <opensusePattern name="remote_desktop"/>
+        <opensusePattern name="devel_mono"/>
+        <opensusePattern name="base"/>
+        <opensusePattern name="webyast-ws"/>
+        <opensusePattern name="webyast-ui"/>
+        <package name="wget"/>
+        <package name="sysvinit"/>
+        <package name="systemd-devel"/>
+        <package name="systemd-gtk"/>
+        <package name="sudo"/>
+        <package name="ethtool"/>
+        <package name="virtualbox-guest-kmp-pae"/>
+        <package name="yast2-metapackage-handler"/>
+        <package name="tcpdump"/>
+        <package name="htop"/>
+        <package name="netconsole-tools"/>
+        <package name="misc-console-font"/>
+        <package name="pdsh"/>
+        <package name="resource-agents"/>
+        <package name="libdlm"/>
+        <package name="crmsh"/>
+        <package name="graphviz"/>
+        <package name="man"/>
+        <package name="libselinux1-32bit"/>
+        <package name="java-1_6_0-openjdk"/>
+        <package name="virtualbox-guest-tools"/>
+        <package name="dialog"/>
+        <package name="kiwi-doc"/>
+        <package name="kiwi-templates"/>
+        <package name="kiwi-instsource"/>
+        <package name="kiwi-desc-netboot"/>
+        <package name="kiwi-pxeboot"/>
+        <package name="kiwi"/>
+        <package name="yast2-product-creator"/>
+        <package name="kiwi-config-openSUSE"/>
+        <package name="yast2-sshd"/>
+        <package name="yast2-autofs"/>
+        <package name="yast2-control-center"/>
+        <package name="yast2-ntp-client"/>
+        <package name="yast2-firewall"/>
+        <package name="yast2-sudo"/>
+        <package name="yast2-live-installer"/>
+        <package name="tsclient"/>
+        <package name="rdesktop"/>
+        <package name="vim-plugin-colorschemes"/>
+        <package name="vim-enhanced"/>
+        <package name="gvim"/>
+        <package name="openldap2"/>
+        <package name="vmware-guest-kmp-pae"/>
+        <package name="open-vm-tools"/>
+        <package name="webmin"/>
+        <package name="zypper"/>
+        <package name="yast2-ncurses"/>
+        <package name="yast2-firstboot"/>
+        <package name="yast2"/>
+        <package name="vim"/>
+        <package name="syslog-ng"/>
+        <package name="less"/>
+        <package name="kernel-default"/>
+        <package name="iputils"/>
+        <package name="SuSEfirewall2"/>
+        <package name="heartbeat"/>
+        <package name="drbd"/>
+        <package name="yast2-drbd"/>
+        <package name="pacemaker"/>
+        <package name="pacemaker-mgmt"/>
+        <package name="NetworkManager"/>
+        <package name="webyast-activedirectory-ui"/>
+        <package name="yast2-ldap-client"/>
+        <package name="openldap2-client"/>
+        <package name="yast2-ldap"/>
+        <package name="nagios"/>
+        <package name="nagios-plugins"/>
+        <package name="nagios-plugins-extras"/>
+        <package name="samba"/>
+        <package name="yast2-samba-server"/>
+        <package name="samba-winbind"/>
+        <package name="yast2-samba-client"/>
+        <package name="webyast-firstboot-ws"/>
+        <package name="webyast-activedirectory-ws"/>
+        <package name="webyast-base-ws"/>
+        <package name="webyast-firewall-ws"/>
+        <package name="webyast-kerberos-ws"/>
+        <package name="webyast-ldap-ws"/>
+        <package name="webyast-licenses-ws"/>
+        <package name="webyast-mail-ws"/>
+        <package name="webyast-network-ws"/>
+        <package name="webyast-ntp-ws"/>
+        <package name="webyast-roles-ws"/>
+        <package name="webyast-root-user-ws"/>
+        <package name="webyast-services-ws"/>
+        <package name="webyast-software-ws"/>
+        <package name="webyast-status-ws"/>
+        <package name="webyast-time-ws"/>
+        <package name="webyast-users-ws"/>
+        <package name="webyast-base-ui"/>
+        <package name="webyast-firewall-ui"/>
+        <package name="webyast-kerberos-ui"/>
+        <package name="webyast-ldap-ui"/>
+        <package name="webyast-licenses-ui"/>
+        <package name="webyast-mail-ui"/>
+        <package name="webyast-network-ui"/>
+        <package name="webyast-reboot-ui"/>
+        <package name="webyast-roles-ui"/>
+        <package name="webyast-root-user-ui"/>
+        <package name="webyast-services-ui"/>
+        <package name="webyast-software-ui"/>
+        <package name="webyast-status-ui"/>
+        <package name="webyast-time-ui"/>
+        <package name="webyast-users-ui"/>
+        <package name="xorg-x11"/>
+        <package name="freerdp"/>
+        <package name="tightvnc"/>
+        <archive bootinclude="true" name="bootsplash.tar"/>
+      </packages>
+      <packages type="bootstrap">
+        <package name="filesystem"/>
+        <package name="glibc-locale"/>
+      </packages>
+    </image>
+  </config>
+  <extra_config name="SAMBHA">
+    <appliance_id>619553</appliance_id>
+    <kiwi_version>4.98.22</kiwi_version>
+    <arch>x86_64</arch>
+    <version>0.0.17</version>
+    <logo>b8/528e07b8432f70e2c6f5f2b258ec84</logo>
+    <background>5a/e4b9afa3d9c2dfc66dcf386689d98d</background>
+    <base_system>12.1</base_system>
+    <image_type>vmx</image_type>
+    <time_zone>UTC</time_zone>
+    <region>Global</region>
+    <default_runlevel>3</default_runlevel>
+    <install_recommended>false</install_recommended>
+    <xen_host>false</xen_host>
+    <exclude_docs>false</exclude_docs>
+    <disable_branding>false</disable_branding>
+    <template>openSUSE 12.1, Server</template>
+    <locale>
+      <language>en_US.UTF-8</language>
+      <keytable>us.map.gz</keytable>
+    </locale>
+    <estimated_size>1790</estimated_size>
+    <size_offset>0</size_offset>
+    <oem_disk_size>16G</oem_disk_size>
+    <check_supportability upgrade_sam="true">false</check_supportability>
+    <repository type="rpm-md">
+      <source internal="false" path="http://download.opensuse.org/update/12.1/"/>
+      <name>openSUSE 12.1 Updates</name>
+    </repository>
+    <repository type="yast2">
+      <source internal="false" path="http://download.opensuse.org/distribution/12.1/repo/oss/"/>
+      <name>openSUSE 12.1 OSS</name>
+    </repository>
+    <repository type="rpm-md">
+      <source internal="false" path="http://download.opensuse.org/repositories/Virtualization/openSUSE_12.1"/>
+      <name>Virtualization 12.1</name>
+    </repository>
+    <repository type="rpm-md">
+      <source internal="false" path="http://download.opensuse.org/repositories/server:monitoring/openSUSE_12.1"/>
+      <name>server:monitoring 12.1</name>
+    </repository>
+    <repository type="rpm-md">
+      <source internal="false" path="http://download.opensuse.org/repositories/YaST:/Head/openSUSE_12.1"/>
+      <name>YAST</name>
+    </repository>
+    <repository type="rpm-md">
+      <source internal="false" path="http://download.opensuse.org/repositories/network:/ha-clustering/openSUSE_12.1"/>
+      <name>ha-clustering-openSUSE_12.1</name>
+    </repository>
+    <network config="dhcp">
+    </network>
+    <startup_programs>
+    </startup_programs>
+    <overlay_files remove="">
+      <file perms="644" type="archive" group="nobody" md5="1cd018148e77325b492de341a17efcf1" extract_archive="true" name="hot-scripts.tar" owner="nobody" path="/root/"/>
+      <file perms="644" type="archive" group="root" md5="334cdc032246fbc62e91fa65b85ceee1" extract_archive="false" name="samba-config.tar.bz2" owner="root" path="/"/>
+      <file perms="644" type="file" group="nobody" md5="1324f66195b09bfe29ceeebb2f1901bc" name="issue" owner="nobody" path="/etc/"/>
+      <file perms="666" type="file" group="root" md5="e5c139a9dbcbcf0368f260042b52686b" name="SuSEfirewall2" owner="root" path="/etc/sysconfig/"/>
+      <file perms="644" type="file" group="root" md5="258c91004bfbc8d6924bc81f1986b25a" name="syslog" owner="root" path="/etc/sysconfig/"/>
+    </overlay_files>
+    <firewall>
+      <firewall_enabled>no</firewall_enabled>
+      <firewall_ssh>opened</firewall_ssh>
+      <firewall_http>opened</firewall_http>
+      <firewall_webyast>opened</firewall_webyast>
+    </firewall>
+    <webyast enabled="true">
+    </webyast>
+    <x_keyboard SL="" variant="" OPT="" layout="us" keycode="xfree86" RC="" model="microsoftpro" LA="" RA=""/>
+    <boot_script>
+      <![CDATA[#!/bin/bash
+#
+# This script is executed whenever your appliance boots.  Here you can add
+# commands to be executed before the system enters the first runlevel.  This
+# could include loading kernel modules, starting daemons that aren't managed
+# by init files, asking questions at the console, etc.
+#
+# The 'kiwi_type' variable will contain the format of the appliance (oem =
+# disk image, vmx = VMware, iso = CD/DVD, xen = Xen).
+#
+
+# read in some variables
+. /studio/profile
+
+if [ -f /etc/init.d/suse_studio_firstboot ]
+then
+
+  # Put commands to be run on the first boot of your appliance here
+  echo "Running SUSE Studio first boot script..."
+
+fi]]>
+    </boot_script>
+    <enable_root_firstboot>false</enable_root_firstboot>
+    <gpg_keys>
+      <gpg_key name="repository_key_1" target="rpm">
+        <![CDATA[-----BEGIN PGP PUBLIC KEY BLOCK-----
+Version: GnuPG v2.0.15 (GNU/Linux)
+
+mQENBEkUTD8BCADWLy5d5IpJedHQQSXkC1VK/oAZlJEeBVpSZjMCn8LiHaI9Wq3G
+3Vp6wvsP1b3kssJGzVFNctdXt5tjvOLxvrEfRJuGfqHTKILByqLzkeyWawbFNfSQ
+93/8OunfSTXC1Sx3hgsNXQuOrNVKrDAQUqT620/jj94xNIg09bLSxsjN6EeTvyiO
+mtE9H1J03o9tY6meNL/gcQhxBvwuo205np0JojYBP0pOfN8l9hnIOLkA0yu4ZXig
+oKOVmf4iTjX4NImIWldT+UaWTO18NWcCrujtgHueytwYLBNV5N0oJIP2VYuLZfSD
+VYuPllv7c6O2UEOXJsdbQaVuzU1HLocDyipnABEBAAG0NG9wZW5TVVNFIFByb2pl
+Y3QgU2lnbmluZyBLZXkgPG9wZW5zdXNlQG9wZW5zdXNlLm9yZz6JATwEEwECACYC
+GwMGCwkIBwMCBBUCCAMEFgIDAQIeAQIXgAUCS+GITQUJClIKDgAKCRC4iy/UPb3C
+hCtvCACELgrgzAbLw8p4PfsHzrEAvZbaWSLpSOCV4ZQdo0Q9vaHcsjENXfnZ7ctu
+hDnyVSmzy4HcVfBfLmK1xkI8ByXK9JGXt3RXuZWHBuaJQKM0hbAZZ/ScMUOs6Igu
+2gmyDaJyrf1vBPtNWpMSS8Jp10iJ9/5B5Hlq4UJxMwTGZwcddhRl/UQKErygdnVg
+o5zTdyB05BKF4KEIvdbl9xSfifLfOT8CGBpCmnUmD6YB7agXm3OAM9bZGa2v9ipm
+s/haLqxS+b4plYKDN8d8xc2whEfTQD158VW0giv38w6NAd6kCxq2pg5L5PmpF9DM
+BZl8K2SBMEtV7BYK9wfnxaRl6Wh/
+=uF5Q
+-----END PGP PUBLIC KEY BLOCK-----
+]]>
+      </gpg_key>
+      <gpg_key name="repository_key_2" target="rpm">
+        <![CDATA[B88B2FD43DBDC284 openSUSE Project Signing Key <opensuse@opensuse.org>
+
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+Version: GnuPG v2.0.18 (GNU/Linux)
+
+mQENBEkUTD8BCADWLy5d5IpJedHQQSXkC1VK/oAZlJEeBVpSZjMCn8LiHaI9Wq3G
+3Vp6wvsP1b3kssJGzVFNctdXt5tjvOLxvrEfRJuGfqHTKILByqLzkeyWawbFNfSQ
+93/8OunfSTXC1Sx3hgsNXQuOrNVKrDAQUqT620/jj94xNIg09bLSxsjN6EeTvyiO
+mtE9H1J03o9tY6meNL/gcQhxBvwuo205np0JojYBP0pOfN8l9hnIOLkA0yu4ZXig
+oKOVmf4iTjX4NImIWldT+UaWTO18NWcCrujtgHueytwYLBNV5N0oJIP2VYuLZfSD
+VYuPllv7c6O2UEOXJsdbQaVuzU1HLocDyipnABEBAAG0NG9wZW5TVVNFIFByb2pl
+Y3QgU2lnbmluZyBLZXkgPG9wZW5zdXNlQG9wZW5zdXNlLm9yZz6JATwEEwECACYC
+GwMGCwkIBwMCBBUCCAMEFgIDAQIeAQIXgAUCS+GITQUJClIKDgAKCRC4iy/UPb3C
+hCtvCACELgrgzAbLw8p4PfsHzrEAvZbaWSLpSOCV4ZQdo0Q9vaHcsjENXfnZ7ctu
+hDnyVSmzy4HcVfBfLmK1xkI8ByXK9JGXt3RXuZWHBuaJQKM0hbAZZ/ScMUOs6Igu
+2gmyDaJyrf1vBPtNWpMSS8Jp10iJ9/5B5Hlq4UJxMwTGZwcddhRl/UQKErygdnVg
+o5zTdyB05BKF4KEIvdbl9xSfifLfOT8CGBpCmnUmD6YB7agXm3OAM9bZGa2v9ipm
+s/haLqxS+b4plYKDN8d8xc2whEfTQD158VW0giv38w6NAd6kCxq2pg5L5PmpF9DM
+BZl8K2SBMEtV7BYK9wfnxaRl6Wh/
+=uF5Q
+-----END PGP PUBLIC KEY BLOCK-----
+]]>
+      </gpg_key>
+      <gpg_key name="repository_key_3" target="rpm">
+        <![CDATA[E3A5C360307E3D54 SuSE Package Signing Key <build@suse.de>
+
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+Version: GnuPG v2.0.18 (GNU/Linux)
+
+mIsERCAdXQEEAL7MrBTz+3SBWpCm2ae2yaDqV3ezQcs2JlvqidJVhsZqQe9/jkxi
+KTEQW5+TXF/+BlQSiebunRI7oo3+9U8GyRCgs1sf+yRQWMLzZqRaarzRhw9w+Ihl
+edtqYl6/U2JZCb8Adp6d7RzlRliJdJ/VtsfXj2ef7Dwu7elOVSsmaBdtAAYptChT
+dVNFIFBhY2thZ2UgU2lnbmluZyBLZXkgPGJ1aWxkQHN1c2UuZGU+iLgEEwECACIC
+GwMECwcDAgMVAgMDFgIBAh4BAheABQJL4BplBQkPRMsIAAoJEOOlw2Awfj1UhOsD
+/RkkEhOIC9NNad0F5O0rEJxvsI7Nm+6FnNJq8LjyR5+87epQCXgpaBXEGd4RcjjO
+TukLaHHrC1T/h4biIyf253VZHr4oJ46sUivNUFq60gl4gk56aTGTNeUWOsgrU4jm
+auFca3dbGcNfiJ7c7dF2CkOAR+CPMLPYTvuVIRQBAjeS
+=jKkp
+-----END PGP PUBLIC KEY BLOCK-----
+]]>
+      </gpg_key>
+      <gpg_key name="repository_key_4" target="rpm">
+        <![CDATA[77B2E6003D25D3D9 SuSE Security Team <security@suse.de>
+
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+Version: GnuPG v2.0.18 (GNU/Linux)
+
+mQENAzbhLQQAAAEIAKAkXHe0lWRBXLpn38hMHy03F0I4Sszmoc8aaKJrhfhyMlOA
+BqvklPLE2f9UrI4Xc860gH79ZREwAgPt0pi6+SleNFLNcNFAuuHMLQOOsaMFatbz
+JR9i4m/lf6q929YROu5zB48rBAlcfTm+IBbijaEdnqpwGib45wE/Cfy6FAttBHQh
+1Kp+r/jPbf1mYAvljUfHKuvbg8t2EIQz/5yGp+n5trn9pElfQO2cRBq8LFpf1l+U
+P7EKjFmlOq+Gs/fF98/dP3DfniSd78LQPq5vp8RL8nr/o2i7jkAQ33m4f1wOBWd+
+cZovrKXYlXiR+Bf7m2hpZo+/sAzhd7LmAD0l09kABRG0JVN1U0UgU2VjdXJpdHkg
+VGVhbSA8c2VjdXJpdHlAc3VzZS5kZT6JARUDBRA24S0Ed7LmAD0l09kBAW04B/4p
+WH3f1vQn3i6/+SmDjGzUu2GWGq6Fsdwo2hVM2ym6CILeow/K9JfhdwGvY8LRxWRL
+hn09j2IJ9P7H1Yz3qDf10AX6V7YILHtchKT1dcngCkTLmDgC4rs1iAAl3f089sRG
+BafGPGKv2DQjHfR1LfRtbf0P7c09Tkej1MP8HtQMW9hPkBYeXcwbCjdrVGFOzqx+
+AvvJDdT6a+oyRMTFlvmZ83UV5pgoyimgjhWnM1V4bFBYjPrtWMkdXJSUXbR6Q7Pi
+RZWCzGRzwbaxqpl3rK/YTCphOLwEMB27B4/fcqtBzgoMOiaZA0M5fFoo54KgRIh0
+zinsSx2OrWgvSiLEXXYK
+=m7kg
+-----END PGP PUBLIC KEY BLOCK-----
+]]>
+      </gpg_key>
+      <gpg_key name="repository_key_5" target="rpm">
+        <![CDATA[1C721C2456B4177A openSUSE\x3aFactory OBS Project <openSUSE\x3aFactory@build.opensuse.org>
+
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+Version: GnuPG v2.0.18 (GNU/Linux)
+
+mQGiBEeWWzMRBADU8l2IckSzgdUS1dn0WMM7wXK4seoFsHHQw/0unHCQCxpyDMnn
+TKV86p5KTbR1FDdeaZlY0yCV+IGsiIxLyuUdJn8vuA5gA5ZkUr89/HtWaeZVl77J
+HIQxvhDRBWCOO4QNtrZYWvGbvl83wl/zOfdLEs8IGElt0LgfohyTA1qfrwCg/Hac
+tDDscXsPlo5Jek/+3RHVeD0D/30riCpfpLJOmhraLg1EbWsE0mN9IQsl+WDPdoYo
+bB76z6eH3e38618WzP/LTG4WuVbwpSSqmXyfdVpXxWzESfT8q0B8CGpHf/Sa/T/L
+emohmRnLvkf/tAfxFmDMm1jOewJIE9S35jANGHVJcxmfRNpPWC7uHnqjopnsmDkL
+kMEdBAC6YcpDOcMJZ9sJbt/JNZBaoT5CltgMDlSN50t2v/J5em8qMLqCSNF5UJyd
+LFnePHTHy6gVjWbqcC0ncFzOqM1y644Up7BoKSAr1hRTl6Mw9S3UfZZZ0al3JtWt
+8y0eFIW3QP66w1AL0LO2bZMBuOvhb63DXv5iHorcxk0yIFbbybRCb3BlblNVU0U6
+RmFjdG9yeSBPQlMgUHJvamVjdCA8b3BlblNVU0U6RmFjdG9yeUBidWlsZC5vcGVu
+c3VzZS5vcmc+iGYEExECACYCGwMGCwkIBwMCBBUCCAMEFgIDAQIeAQIXgAUCS+GM
+qwUJC8//eAAKCRAcchwkVrQXenCfAKCiI/uNClNI32AaPU36o2mFIUKcHgCfby3/
+8UEqkeBRFM1zyjHBo2w/GYw=
+=CPJz
+-----END PGP PUBLIC KEY BLOCK-----
+]]>
+      </gpg_key>
+      <gpg_key name="repository_key_6" target="rpm">
+        <![CDATA[A84EDAE89C800ACA SuSE Package Signing Key <build@suse.de>
+
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+Version: GnuPG v2.0.18 (GNU/Linux)
+
+mQGiBDnu9IERBACT8Y35+2vv4MGVKiLEMOl9GdST6MCkYS3yEKeueNWc+z/0Kvff
+4JctBsgs47tjmiI9sl0eHjm3gTR8rItXMN6sJEUHWzDP+Y0PFPboMvKx0FXl/A0d
+M+HFrruCgBlWt6FA+okRySQiliuI5phwqkXefl9AhkwR8xocQSVCFxcwvwCglVcO
+QliHu8jwRQHxlRE0tkwQQI0D+wfQwKdvhDplxHJ5nf7U8c/yE/vdvpN6lF0tmFrK
+XBUX+K7u4ifrZlQvj/81M4INjtXreqDiJtr99Rs6xa0ScZqITuZC4CWxJa9GynBE
+D3+D2t1V/f8l0smsuYoFOF7Ib49IkTdbtwAThlZp8bEhELBeGaPdNCcmfZ66rKUd
+G5sRA/9ovnc1krSQF2+sqB9/o7w5/q2qiyzwOSTnkjtBUVKn4zLUOf6aeBAoV6NM
+CC3Kj9aZHfA+ND0ehPaVGJgjaVNFhPi4x0e7BULdvgOoAqajLfvkURHAeSsxXIoE
+myW/xC1sBbDkDUIBSx5oej73XCZgnj/inphRqGpsb+1nKFvF+rQoU3VTRSBQYWNr
+YWdlIFNpZ25pbmcgS2V5IDxidWlsZEBzdXNlLmRlPohiBBMRAgAiAhsDBAsHAwID
+FQIDAxYCAQIeAQIXgAUCS+AZmQUJGXXzGAAKCRCoTtronIAKyl9KAJ9KyC11XDiC
+lhuqOJ+Q0yPL5Ge/aQCePxBrVWcVaAjGq4vTkwMkiD9FVMK5Ag0EOe70khAIAISR
+0E3ozF/la+oNaRwxHLrCet30NgnxRROYhPaJB/Tu1FQokn2/Qld/HZnh3TwhBIw1
+FqrhWBJ7491iAjLR9uPbdWJrn+A7t8kSkPaF3Z/6kyc5a8fas44ht5h+6HMBzoFC
+MAq2aBHQRFRNp9Mz1ZvoXXcI1lk1l8OqcUM/ovXbDfPcXsUVeTPTtGzcAi2jVl9h
+l3iwJKkyv/RLmcusdsi8YunbvWGFAF5GaagYQo7YlF6UaBQnYJTM523AMgpPQtsK
+m9o/w9WdgXkgWhgkhZEeqUS3m5xNey1nLu9iMvq9M/iXnGz4sg6Q2Y+GqZ+yAvNW
+jRRou3zSE7Bzg28MI4sAAwYH/2D71Xc5HPDgu87WnBFgmp8MpSr8QnSs0wwPg3xE
+ullGEocolSb2c0ctuSyeVnCttJMzkukL9TqyF4s/6XRstWirSWawJxRLKH6Zjo/F
+aKsshYKf8gBkAaddvpl3pO0gmUYbqmpQ3xDEYlhCeieXS5MkockQ1sj2xYdB1xO0
+ExzfiCiscUKjUFy+mdzUsUutafuZ+gbHog1CN/ccZCkxcBa5IFCHORrNjq9pYWlr
+xsEn6ApsG7JJbM2besW1PkdEoxak74z1senh36m5jQvVjA3U4xq1wwylxadmmJaJ
+HzeiLfb7G1ZRjZTsB7fyYxqDzMVul6o9BSwO/1XsIAnV1uuITAQYEQIADAUCS+AZ
+vQUJGXXzKwAKCRCoTtronIAKysYeAJ4yNHu8lpjQiBL69k3VNr9hbQMmzwCfcrIB
+TnsG384Q1YOf9lIUSYEa9sk=
+=yIuV
+-----END PGP PUBLIC KEY BLOCK-----
+]]>
+      </gpg_key>
+      <gpg_key name="repository_key_7" target="rpm">
+        <![CDATA[-----BEGIN PGP PUBLIC KEY BLOCK-----
+Version: GnuPG v1.4.5 (GNU/Linux)
+
+mQGiBEo57jARBACtvxY4YxhGN83P/z9NDZgFgPIJGrJcwUfqF00cH+jmgbHWVTf3
+uK6+LsGwzsJIy9/xkLfCIhsFneTrl4Ub6VYHdqWu3uPMchg/TxhXou2AhCV6M/Bb
+9WoU0S8rAiB7FZQSZwXYSXz1kyXmVeq1oT5TxnGbKJCvPqgcR1EquLhadwCg3MF+
+/KxMol96Fvm2M9ZacHA5df8EAIAzfLESrL0bR9RjieOKzr6PPhCyPSwOLhWTF1mm
+JISbHq0GrY/bRWPSzYbKFqvgLahyAhrsNOjD2vJbh02aC42bPoG61FnGZLljeshi
+VvhuRWR66oaWIyfdPvarJUFL5I09Umw15NwDYGgo3MSQGll9uPqRaAgQZAtB5Fr4
+zPUCA/9inWwh/wSej5ahO3eyQ0WzaWVLcpSTIXEw9jwmqiyCTIPkYFdz1ag4MfdC
+7YmxbySZJCxLgBYAWvAF1eYru/K0AJmFGK/62mHOqCmk7XQ3/wiVPw3Mu8qge6Ft
+jwmPFHkUhg00pSykTclpV6+xopKpstg+YgsaZ0PB0esm7S3eLbQ+VmlydHVhbGl6
+YXRpb24gT0JTIFByb2plY3QgPFZpcnR1YWxpemF0aW9uQGJ1aWxkLm9wZW5zdXNl
+Lm9yZz6IZgQTEQIAJgUCTsKVDwIbAwUJCKdW3wYLCQgHAwIEFQIIAwQWAgMBAh4B
+AheAAAoJEKsNSMF7wOEleZIAn016ReAPphN4vcXjMZ7Q28JuHjs1AJ453jYGmLq+
+sphYz0Ci4c25KmjRt4hGBBMRAgAGBQJKOe4wAAoJEDswEbdrnWUj/FkAoKE5m9Oy
+sogX3N8981ZNbOqflpY8AKCRJ4bV0oGaidmFZ8Q8KXai/qye2A==
+=67IQ
+-----END PGP PUBLIC KEY BLOCK-----
+]]>
+      </gpg_key>
+      <gpg_key name="repository_key_8" target="rpm">
+        <![CDATA[-----BEGIN PGP PUBLIC KEY BLOCK-----
+Version: GnuPG v1.4.5 (GNU/Linux)
+
+mQGiBEeWW1QRBACh+BO7H7CvLLhpF6JtG3XbEiCCBaOWJuno3hj4xJnZY6moeqUu
+GEI4yxi/PW7EwrrtzUVcJrmsnnqOE26uPHV6zK0Mxy2yHTdJtymswtxpCzvjHthO
+VBr2ZhKIJ4IbZpdQg5QRJyWL+wPnUFSlj3we1p+ycS59wOfHfE8RT9X5PwCgme2P
+DddcvLjMVwbfpRL1cElC9MMD/2aLUA0MjJtyUdh6ruBsW749FPOW7jRvOnpWouXn
+hxEMRcGKXHyHSNKQaEppC4jmbqEy4XUir8OjVf78783U1jPZAc9lXBw6oc5WDRV+
+soH6uv/GjhkcYEhSnBrUZu8wqF3D6XCmSd3a429Mvru3snfEYOUl4vrL5E71BwSq
+wKhnA/4igS5TJ9W6AXyduOJkzxu70BdGNjHgf93I3iubeVBb0sCunCpsAuwDv1b1
+hYKC5N6amCUh0w7P6Bzy05avnfSVoOqyVkWkzYIMKVN3GL1tnWtwKGdCgp0QAEBt
++dcX55Ri44msn6sjk72NCjMGutFXTGWMgF+Ndcvtf9ETRX4EYLREc2VydmVyOm1v
+bml0b3JpbmcgT0JTIFByb2plY3QgPHNlcnZlcjptb25pdG9yaW5nQGJ1aWxkLm9w
+ZW5zdXNlLm9yZz6IZgQTEQIAJgUCTFgYWwIbAwUJCOBtBwYLCQgHAwIEFQIIAwQW
+AgMBAh4BAheAAAoJEKXCNpfuRU+YrowAnj/OSgPdKnlAi94R9vPfEvSe0bfrAJ0d
+rOrzhkyw91MoAzGH3Ut8Yn6PbohGBBMRAgAGBQJHlltUAAoJEDswEbdrnWUjL8oA
+oKkgKixRVR6Gx/Tpu/zv39DyiLrLAJwMZ6mnCZj6NRvehKyOyiFjVJ/GJg==
+=+0pL
+-----END PGP PUBLIC KEY BLOCK-----
+]]>
+      </gpg_key>
+      <gpg_key name="repository_key_9" target="rpm">
+        <![CDATA[-----BEGIN PGP PUBLIC KEY BLOCK-----
+Version: GnuPG v1.4.5 (GNU/Linux)
+
+mQGiBEfZbkMRBADjWPMrWcXDcSDlPYsnn5tgT1LMJqqJwBisS6fNYWAxEMof4lWJ
+MIiRyDE86uAgUvwCsDxmTHeM5uV8KOmsKedxd2bU8lNPSwcSXMLrVhL0mUpPz+EP
+eq3VJkLCR+HSszWGkOrh8FddeaQBR5gYiwYu3Spoc8lHiUncbw/N2CeWDwCggMO/
+GsLl+mXbmn4AYFLhNGvRUPUD/2tSlTOAIiGF3Y3svpYdIidMZlNo/+nss0qOMWaM
+gZ+3pgXpZ+5pdXbukBupXipEvk+6JnmZjE/sZ/iY2j3WDb9Bh45ix7CA1zXMYtTk
+0oAzUmxSWbJVqegcMQkR+9HT1Ys5x+7TQKuQQWXBPtp79zAQlOOa3Vy9Blgnom4R
+nue8BACps5N0eQovsbBhGHr9uDcHrYRt74sgLqA83MP6voATCj+NLMFhHgIxJYrt
+bItoeEeoPBaJ77AkcMJpitUBW2Ud6bDeChqf48nlnGjVBlIAwx63d0kkYPnsn5kN
+BnhkkH9fUDgc934krzsf7dPrpFIkG0LI/TlSshI3HDI71m0r07QqWWFTVCBPQlMg
+UHJvamVjdCA8WWFTVEBidWlsZC5vcGVuc3VzZS5vcmc+iGYEExECACYFAk6xas8C
+GwMFCQr2rIwGCwkIBwMCBBUCCAMEFgIDAQIeAQIXgAAKCRBbJUfYYefQbBbxAJwI
+wYzTSt62bbpshXOeB5d7Lw7FwgCfRoEEzR+3aweAxYBvENcV93MOz4qIRgQTEQIA
+BgUCR9luQwAKCRA7MBG3a51lI3yCAJ4jfMqPAn8uPoosOSeA80t7MQdYOACgq9yA
+o67MnrLsqTdAM0Ud3ld3NhA=
+=9v0K
+-----END PGP PUBLIC KEY BLOCK-----
+]]>
+      </gpg_key>
+      <gpg_key name="repository_key_10" target="rpm">
+        <![CDATA[-----BEGIN PGP PUBLIC KEY BLOCK-----
+Version: GnuPG v1.4.5 (GNU/Linux)
+
+mQGiBEo57hYRBACf+lfK0zRfpzswhqyn2gvq1T/97WNzIUPnmSfd62Ke9ffkHCUK
+zt592H7sNkOI8NpYRvjDxkQwooa3Rtd6CXrmAAna21a8Qwsc/nvIRen1T3lnYUGq
+uHjZClqCCFup5SAUxYp65bG7jCfTScjS5FN+aksER9wwN98HmnxWDd7AnwCgqO4m
+ZBlU6fy961aKV4HCsYtx3wED/2npMzaQD/zkOjnxqkia0Wi0PrxVPWWjpsAWLf2s
+yAGIxb1wZYkxCcPZt89T63vLMg1S+AgAHbLAsYY9Ng/n/wz8HP3O1harxY5Khufw
+tz37u+6JFQiUtUNt4Z1z4sjKUEMYhfJHzu0EPY8n0ppnK5Tm0BpJJZAfUVKlJ0jw
+HCLqA/9y3ppNuQ1biXea3df/vO00qdz8KKrMmrN8FwtnPT7Lto7j0amPrZmF17R7
+cm21SjaS2mBx0Ac1QjScbvvAUvFTnkQEa9Ls1FWw82RY92fLOCvNIVru8S+GLOx5
+eErK91c9kl7UhSq9Yms2cppwasHtF0Q1GqLu1GDFYwVCO56ALLQwbmV0d29yayBP
+QlMgUHJvamVjdCA8bmV0d29ya0BidWlsZC5vcGVuc3VzZS5vcmc+iGYEExECACYF
+AkxYFjECGwMFCQY82BsGCwkIBwMCBBUCCAMEFgIDAQIeAQIXgAAKCRDeAP7Ne3CZ
+ETTUAKCUtKgslQGmxJOqwr++R0ui4Rj+VgCcD1RTkX61J5/Y6SxYibDTb7UsafiI
+RgQTEQIABgUCSjnuFgAKCRA7MBG3a51lI5aMAJ9sFWKe0xekqpENmALmS6H9sHEW
+SgCgsivUDUBzMU1R4Nk/ki2UMSgJUH0=
+=CU0X
+-----END PGP PUBLIC KEY BLOCK-----
+]]>
+      </gpg_key>
+    </gpg_keys>
+    <window_manager></window_manager>
+    <display_manager></display_manager>
+  </extra_config>
+</manifest>

@@ -1,0 +1,7 @@
+[YAST]
+name=YAST
+baseurl=http://download.opensuse.org/repositories/YaST:/Head/openSUSE_12.1
+type=rpm-md
+enabled=1
+autorefresh=1
+gpgcheck=1

@@ -1,0 +1,41 @@
+## Path:		System/Logging
+## Description:		System logging
+## Type:		list(syslogd,syslog-ng,rsyslogd,"")
+## Default:		""
+## Config:		""
+## ServiceRestart:	syslog
+#
+# The name of the syslog daemon to use as syslog service:
+# "syslogd", "syslog-ng", "rsyslogd" or "" for autodetect.
+#
+SYSLOG_DAEMON="syslog-ng"
+
+## Type:                list(yes,no,"")
+## Default:             ""
+## Config:              ""
+## ServiceRestart:      syslog
+#
+# Specify whether the syslog configuration requires network.
+# Set to "yes" to delay the syslog daemon start until network
+# is already started, set to "no" to start it earlier.
+#
+# The behavior of the default setting "" depends on the daemon
+# specified in the SYSLOG_DAEMON variable and on the current
+# implementation of the init / systemd scripts. It may cause
+# a try to detect whether network is required for the config
+# or choose one of the above modi.
+#
+SYSLOG_REQUIRES_NETWORK=""
+
+## Type:           string
+## Default:        ""
+## Config:         ""
+## ServiceRestart: syslog
+#
+# Parameters for Syslog New-Generation - see syslog-ng(8)
+#
+SYSLOG_NG_PARAMS=""
+
+
+# Disable kernel logging to STDOUT
+KLOGD_OPTIONS="-2 -c 1"

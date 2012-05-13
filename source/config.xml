@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<image name='SAMBHA' displayname='SAMBHA' schemeversion='2.4'>
+  <description type='system'>
+    <author>itomato</author>
+    <contact>studio-devel@suse.de</contact>
+    <specification>A text-only base</specification>
+  </description>
+  <preferences>
+    <type format='vmdk' filesystem='ext3' primary='true' checkprebuilt='true' fsnocheck='true' boot='vmxboot/suse-12.1'>vmx</type>
+    <version>0.0.17</version>
+    <packagemanager>zypper</packagemanager>
+    <rpm-check-signatures>False</rpm-check-signatures>
+    <rpm-force>False</rpm-force>
+    <boot-theme>studio</boot-theme>
+    <locale>en_US</locale>
+    <size additive='false' unit='M'>16384</size>
+  </preferences>
+  <users group='root'>
+    <user name='admin' shell='/bin/bash' pwd='$1$eOaa5xEF$B36fuxl7oFEn.OnfCUx861' home='/home/admin'/>
+    <user name='root' shell='/bin/bash' pwd='$1$cycFQktV$0bO5X67ZvIRKbB/JjDqEY/' home='/root'/>
+  </users>
+  <vmwareconfig memory='512' arch='x86_64' usb='true' guestOS='suse-64'>
+    <vmwaredisk id='0' controller='scsi'/>
+    <vmwarecdrom id='0' controller='ide'/>
+    <vmwarenic mode='bridged' interface='0' driver='e1000'/>
+  </vmwareconfig>
+  <packages patternType='onlyRequired' type='image' patternPackageType='onlyRequired'>
+    <opensusePattern name='yast2_basis'/>
+    <opensusePattern name='remote_desktop'/>
+    <opensusePattern name='base'/>
+    <package name='wget'/>
+    <package name='sysvinit'/>
+    <package name='systemd-devel'/>
+    <package name='systemd-gtk'/>
+    <package name='sudo'/>
+    <package name='ethtool'/>
+    <package name='virtualbox-guest-kmp-pae'/>
+    <package name='yast2-metapackage-handler'/>
+    <package name='tcpdump'/>
+    <package name='htop'/>
+    <package name='netconsole-tools'/>
+    <package name='misc-console-font'/>
+    <package name='pdsh'/>
+    <package name='resource-agents'/>
+    <package name='libdlm'/>
+    <package name='crmsh'/>
+    <package name='graphviz'/>
+    <package name='man'/>
+    <package name='libselinux1-32bit'/>
+    <package name='java-1_6_0-openjdk'/>
+    <package name='virtualbox-guest-tools'/>
+    <package name='dialog'/>
+    <package name='kiwi-doc'/>
+    <package name='kiwi-templates'/>
+    <package name='kiwi-instsource'/>
+    <package name='kiwi-desc-netboot'/>
+    <package name='kiwi-pxeboot'/>
+    <package name='kiwi'/>
+    <package name='yast2-product-creator'/>
+    <package name='kiwi-config-openSUSE'/>
+    <package name='yast2-sshd'/>
+    <package name='yast2-autofs'/>
+    <package name='yast2-control-center'/>
+    <package name='yast2-ntp-client'/>
+    <package name='yast2-firewall'/>
+    <package name='yast2-sudo'/>
+    <package name='yast2-live-installer'/>
+    <package name='tsclient'/>
+    <package name='rdesktop'/>
+    <package name='vim-plugin-colorschemes'/>
+    <package name='vim-enhanced'/>
+    <package name='gvim'/>
+    <package name='openldap2'/>
+    <package name='vmware-guest-kmp-pae'/>
+    <package name='open-vm-tools'/>
+    <package name='webmin'/>
+    <package name='zypper'/>
+    <package name='yast2-ncurses'/>
+    <package name='yast2-firstboot'/>
+    <package name='yast2'/>
+    <package name='vim'/>
+    <package name='syslog-ng'/>
+    <package name='less'/>
+    <package name='kernel-default'/>
+    <package name='iputils'/>
+    <package name='SuSEfirewall2'/>
+    <package name='heartbeat'/>
+    <package name='drbd'/>
+    <package name='yast2-drbd'/>
+    <package name='pacemaker'/>
+    <package name='pacemaker-mgmt'/>
+    <package name='NetworkManager'/>
+    <package name='yast2-ldap-client'/>
+    <package name='openldap2-client'/>
+    <package name='yast2-ldap'/>
+    <package name='nagios'/>
+    <package name='nagios-plugins'/>
+    <package name='nagios-plugins-extras'/>
+    <package name='samba'/>
+    <package name='yast2-samba-server'/>
+    <package name='samba-winbind'/>
+    <package name='yast2-samba-client'/>
+    <package name='xorg-x11'/>
+    <package name='freerdp'/>
+    <package name='tightvnc'/>
+    <archive bootinclude='true' name='bootsplash.tar'/>
+  </packages>
+  <packages type='bootstrap'>
+    <package name='filesystem'/>
+    <package name='glibc-locale'/>
+  </packages>
+  <repository type='rpm-md'>
+    <source path='{itomato openSUSE 11.1}'/>
+  </repository>
+  <repository type='rpm-md'>
+    <source path='http://download.opensuse.org/update/12.1/'/>
+  </repository>
+  <repository type='yast2'>
+    <source path='http://download.opensuse.org/distribution/12.1/repo/oss/'/>
+  </repository>
+  <repository type='rpm-md'>
+    <source path='http://download.opensuse.org/repositories/Virtualization/openSUSE_12.1'/>
+  </repository>
+  <repository type='rpm-md'>
+    <source path='http://download.opensuse.org/repositories/server:monitoring/openSUSE_12.1'/>
+  </repository>
+  <repository type='rpm-md'>
+    <source path='http://download.opensuse.org/repositories/YaST:/Head/openSUSE_12.1'/>
+  </repository>
+  <repository type='rpm-md'>
+    <source path='{itomato openSUSE 12.1}'/>
+  </repository>
+  <repository type='rpm-md'>
+    <source path='http://download.opensuse.org/repositories/network:/ha-clustering/openSUSE_12.1'/>
+  </repository>
+</image>
