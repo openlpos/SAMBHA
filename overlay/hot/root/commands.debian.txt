@@ -1,0 +1,132 @@
+#!bin/bash
+# Establish identity
+# Find out whether we're hot or cold
+
+LVSIZE=7500M
+FS=ext4
+
+echo "Is this host the Primary (hot) or Secondary (warm) server?"
+read role
+case role in
+	hot)
+		echo "  -> Configuring for hot role.."
+		ROLE=hot
+	;;
+	
+	warm)
+		echo "  -> Configuring for warm role.."
+		ROLE=warm
+	;;
+	
+	*)
+		echo " -> Configuing for standalone role.."
+		ROLE=stand
+	;;
+	
+esac
+
+# Find out what interface is serving heartbeat, drbd, and public:
+ifconfig 
+
+# Find disks
+blockdev --report 
+mount | awk '{print $1}' | uniq | grep '/dev/' 
+
+# Create LVM volumes
+
+# Physial
+DRBDPV0="/dev/sdb"
+
+pvs | grep $DRBDPV0
+if [ $? -eq 0 ]
+then
+	echo "Found $DRBDPV0 - Removing!"
+	pvremove -ff $DRBDPV0
+fi
+
+echo "Creating PV on $DRBDPV0.."
+echo "pvcreate $DRBDPV0"
+
+DRBDPV1="/dev/sdc"
+
+pvs | grep $DRBDPV1
+if [ $? -eq 0 ]
+then
+	echo "Found $DRBDPV1 - Removing!"
+	pvremove -ff $DRBDPV1
+fi
+
+echo "Creating PV on $DRBDPV1.."
+echo "pvcreate $DRBDPV1"
+
+# Volume Group
+vgs 
+
+
+echo "Creating VG on $DRBDPV0.."
+echo "vgcreate drbdsamba0vg $DRBDPV0"
+vgcreate drbdsamba0vg $DRBDPV0
+
+echo "Creating VG on $DRBDPV1.."
+echo "vgcreate drbdsamba1vg $DRBDPV1"
+vgcreate drbdsamba1vg $DRBDPV1
+
+
+# Logical
+makelvs(){
+echo "Creating LV on drbdsamba0vg"
+echo "lvcreate -n drbdsamba0lv -L $LVSIZE drbdsamba0vg"
+lvcreate -n drbdsamba0lv -L $LVSIZE drbdsamba0vg
+
+echo "Creating LV on drbdsamba1vg"
+echo "lvcreate -n drbdsamba1lv -L $LVSIZE drbdsamba1vg"
+lvcreate -n drbdsamba1lv -L $LVSIZE drbdsamba1vg
+
+
+# Configure DRBD volumes
+echo "Create $FS filesystem on drbdsamba0lv?"
+echo "All data will be lost. \n (Y)es/[N]o"
+read makefs
+
+case $makefs in
+	y|Y)
+		echo "Are you sure?  All data will be erased from drbdsamba0lv."
+		echo "All data will be lost. \n (Y)es/[N]o"
+		read reallymakefs
+		case $reallymakefs in
+
+		y|Y)
+			echo "Creating filesystem on drbdsamba0lv.."
+			echo "mkfs.$FS /dev/drbdsamba0vg/drbdsamba0lv "
+			mkfs.$FS /dev/drbdsamba0vg/drbdsamba0lv
+		;;
+
+
+		n|N)
+			echo "No action taken."
+		;;	
+
+		esac
+	;;
+	
+	*)
+	
+		echo "No action taken."
+	;;
+
+esac
+
+}
+
+makelvs
+
+make_mirror(){
+# Create LVM Mirror
+echo "lvcreate -n drbdsamba0lv -m 1 -L $LVSIZE /dev/drbdsamba0vg --mirrorlog core"
+lvcreate -n drbdsamba0lv -m 1 -L $LVSIZE /dev/drbdsamba0vg --mirrorlog core
+}
+
+echo  ; echo ; echo "---------------------------------------------------"
+echo "DRBD Volumes are prepared."
+echo "Configure DRBD and Heartbeat"
+echo "---------------------------------------------------" ; echo ; echo
